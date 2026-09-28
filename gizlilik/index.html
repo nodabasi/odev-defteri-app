@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ödev Defteri — Gizlilik Politikası</title>
+<meta name="description" content="Ödev Defteri'nin hangi bilgileri topladığı, nerede sakladığı, kimlerle paylaştığı ve bunları nasıl sildireceğiniz.">
+<link rel="icon" href="../assets/logo.png">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <img src="../assets/logo.png" alt="Ödev Defteri">
+  <h1>Gizlilik Politikası</h1>
+  <p class="tagline">Ne topluyoruz, nerede duruyor, nasıl silinir</p>
+</header>
+
+<p class="meta">Yürürlük: 28 Eylül 2026 · iOS ve Android için Ödev Defteri mobil
+uygulaması</p>
+
+<h2>Kısa özet</h2>
+<p>Ödev Defteri bir öğretmenle bir veliyi aynı kayda bağlar, bu yüzden hesap açmayı ve
+verinin sunucuda tutulmasını gerektirir. Buna karşılık uygulamada reklam, analitik,
+çökme izleme ve reklam kimliği <b>yoktur</b>; konum, telefon numarası ve fotoğraf
+istenmez. Topladığımız tek şey hizmetin çalışması için gereken bilgidir: kim olduğunuz,
+hangi gruptasınız, hangi ders yapıldı ve hangi ödev verildi.</p>
+
+<h2>Veri sorumlusu</h2>
+<p>Uygulama bağımsız bir geliştirici tarafından yayımlanmaktadır:
+<b>Mehmet Nusret Odabaşı</b>. İletişim:
+<a href="mailto:odabasi.developer@gmail.com">odabasi.developer@gmail.com</a>.</p>
+
+<h2>Topladığımız bilgiler</h2>
+<ul class="plain">
+  <li><b>Hesap bilgisi</b> — e-posta adresiniz ve şifreniz. Şifre Google'ın Firebase
+  Authentication servisinde şifrelenmiş olarak tutulur; ne biz ne de uygulama
+  şifrenizi görebilir.</li>
+  <li><b>Profil</b> — adınız, soyadınız, rolünüz (öğretmen ve/veya veli) ve
+  öğretmenseniz branşınız.</li>
+  <li><b>Öğrenci kaydı</b> — veli olarak eklediğiniz öğrencinin adı ve soyadı.</li>
+  <li><b>Gruplar</b> — öğretmenin oluşturduğu grubun adı ve davet kodu.</li>
+  <li><b>Katılım kayıtları</b> — hangi öğrencinin hangi gruba katıldığı ve isteğin
+  durumu.</li>
+  <li><b>Dersler</b> — günü, saati, süresi; alınan yoklama ve öğretmenin yazdığı ders
+  raporu.</li>
+  <li><b>Ödevler</b> — başlık, açıklama, son teslim tarihi ve her öğrenci için teslim
+  durumu.</li>
+  <li><b>Bildirim geçmişi</b> — size gönderilen bildirimler ve okunup okunmadıkları.</li>
+  <li><b>Cihaz bildirim jetonu</b> — bildirimin doğru telefona ulaşması için Google'ın
+  ürettiği kimlik. Kişisel bilgi içermez ve yalnızca bildirim göndermek için
+  kullanılır.</li>
+</ul>
+
+<h2>Toplamadığımız bilgiler</h2>
+<ul class="plain">
+  <li>Konum — hiçbir hassasiyette istenmez.</li>
+  <li>Reklam kimliği — uygulamada reklam yoktur.</li>
+  <li>Analitik ve çökme raporu — kullanım ölçen hiçbir araç kurulu değildir.</li>
+  <li>Telefon numarası, profil fotoğrafı, doğum tarihi.</li>
+  <li>Ödeme bilgisi — ücretli bir özellik yoktur.</li>
+  <li>Rehber, fotoğraf galerisi, mikrofon ya da kamera erişimi.</li>
+</ul>
+
+<h2>Kim neyi görebilir</h2>
+<p>Erişim sunucu tarafındaki güvenlik kurallarıyla sınırlanır; uygulamanın arayüzüne
+değil, veritabanının kendisine yazılmıştır.</p>
+<ul class="plain">
+  <li><b>Öğretmen</b>, yalnızca kendi oluşturduğu grupları, o gruplara katılmış
+  öğrencilerin ad-soyadını, o derslerin yoklamasını ve verdiği ödevlerin teslim
+  durumunu görür.</li>
+  <li><b>Veli</b>, yalnızca kendi eklediği öğrencileri, onların katıldığı grupları, o
+  gruplardaki dersleri ve ödevleri görür.</li>
+  <li>Bir öğretmen başka bir öğretmenin grubunu, bir veli başka bir velinin öğrencisini
+  göremez.</li>
+  <li>Bir grubun öğretmeni, o gruba katılan öğrencilerin velilerinin e-posta adresini
+  görmez.</li>
+</ul>
+
+<h2>Hizmet sağlayıcı</h2>
+<p>Uygulama <b>Google Firebase</b> altyapısını kullanır: Authentication (hesap),
+Cloud Firestore (veritabanı), Cloud Functions (sunucu işlemleri) ve Cloud Messaging
+(bildirim). Google bu hizmetlerde veri işleyen sıfatıyla hareket eder.</p>
+<p>Bunun dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı, analitik sağlayıcı
+ya da veri simsarı yoktur. Veriler satılmaz.</p>
+
+<h2>Verilerin tutulduğu yer</h2>
+<p>Veritabanı Google'ın <b>Avrupa çok bölgeli (eur3)</b> konumunda çalışır; kayıtlar
+Belçika ve Hollanda'daki veri merkezlerinde tutulur. Sunucu işlemleri Belçika
+(europe-west1) bölgesinde yürütülür.</p>
+
+<h2>Öğrencilere ait bilgiler</h2>
+<p>Uygulamada öğrenci adına hesap açılmaz. Öğrenci kaydı yalnızca <b>ad ve soyaddan</b>
+oluşur ve bunu hesabın sahibi — veli ya da yaşı yeterliyse öğrencinin kendisi — girer.
+Öğrenciden doğrudan bilgi toplanmaz; onun adına bilgi giren kişi bunu kendi
+sorumluluğunda yapar.</p>
+<p>Bir çocuğa ait bilginin rızanız olmadan girildiğini düşünüyorsanız yukarıdaki
+adresten bize yazın; kaydı siler ve size dönüş yaparız.</p>
+
+<h2>Saklama süresi</h2>
+<p>Kayıtlar hesabınız durduğu sürece saklanır. Hesabınızı sildiğinizde aşağıdaki
+kapsamda temizlenir.</p>
+
+<h2>Hesabınızı silmek</h2>
+<p>Silme işlemi uygulamanın içinden yapılır: <b>Profil → Hesabı Sil</b>. Bize yazmanıza
+gerek yoktur. Adımlar <a href="../hesap-silme/">hesap silme sayfasında</a> anlatılıyor.</p>
+<p><b>Silinenler:</b> giriş hesabınız ve e-posta adresiniz, profiliniz (ad, soyad,
+branş, rol), bildirim jetonlarınız; öğretmenseniz oluşturduğunuz gruplar ile davet
+kodları; katılım kayıtlarınız; yalnızca size bağlı olan öğrenci kayıtları.</p>
+<p><b>Silinmeyenler:</b> paylaşılan veri, karşı tarafın kaydını da götürmemek için
+korunur. Bir öğrencinin başka bir velisi daha varsa öğrenci kaydı silinmez, yalnızca
+siz listeden çıkarılırsınız. Ayrıca <b>ders, ödev ve bildirim kayıtları şu an
+silinmemektedir</b>; hesabınız kapandıktan sonra da veritabanında kalırlar. Bu
+kayıtların da silinmesini istiyorsanız yukarıdaki adresten talep edin, elle
+temizleyelim.</p>
+
+<h2>Haklarınız</h2>
+<p>KVKK'nın 11. maddesi ve GDPR kapsamında; işlenen verileriniz hakkında bilgi
+isteme, düzeltilmesini, silinmesini ya da işlenmesinin sınırlandırılmasını talep etme
+ve bir kopyasını isteme haklarına sahipsiniz.</p>
+<ul class="plain">
+  <li><b>Görme ve düzeltme</b> — profil bilgilerinizi ve eklediğiniz öğrencileri
+  uygulama içinden görebilir ve değiştirebilirsiniz.</li>
+  <li><b>Silme</b> — hesabınızı uygulama içinden silebilirsiniz.</li>
+  <li><b>Diğer talepler</b> — yukarıdaki e-posta adresine yazın; otuz gün içinde
+  yanıt veririz.</li>
+</ul>
+
+<h2>Güvenlik</h2>
+<p>Cihazla sunucu arasındaki tüm trafik şifrelenir (TLS). Veritabanına erişim,
+kullanıcı bazında yazılmış güvenlik kurallarıyla sınırlanır: bir hesap yalnızca kendi
+üyesi olduğu kayıtları okuyabilir. Şifreler Google tarafından şifrelenmiş olarak
+saklanır ve hiçbir aşamada bize ulaşmaz.</p>
+<p>Buna rağmen hiçbir sistemin mutlak güvenlikte olmadığını belirtmek isteriz.</p>
+
+<h2>Bu metinde değişiklik</h2>
+<p>Politika değişirse bu sayfa güncellenir ve yukarıdaki yürürlük tarihi yenilenir.
+Toplanan veri türünü genişleten bir değişiklik olursa uygulama içinden de
+bilgilendirilirsiniz.</p>
+
+<div class="contact warn">
+  <p>Sorunuz ya da talebiniz için:
+  <a href="mailto:odabasi.developer@gmail.com">odabasi.developer@gmail.com</a></p>
+</div>
+
+<hr>
+<footer>
+  <a href="../">Ödev Defteri</a>
+  <a href="../destek/">Destek</a>
+  <a href="../hesap-silme/">Hesap Silme</a>
+  <div class="copyright">© 2026 Mehmet Nusret Odabaşı</div>
+</footer>
+
+</div>
+</body>
+</html>
