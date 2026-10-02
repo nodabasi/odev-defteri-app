@@ -17,15 +17,17 @@
   <p class="tagline">Ne topluyoruz, nerede duruyor, nasıl silinir</p>
 </header>
 
-<p class="meta">Yürürlük: 28 Eylül 2026 · iOS ve Android için Ödev Defteri mobil
+<p class="meta">Yürürlük: 2 Ekim 2026 · iOS ve Android için Ödev Defteri mobil
 uygulaması</p>
 
 <h2>Kısa özet</h2>
 <p>Ödev Defteri bir öğretmenle bir veliyi aynı kayda bağlar, bu yüzden hesap açmayı ve
-verinin sunucuda tutulmasını gerektirir. Buna karşılık uygulamada reklam, analitik,
-çökme izleme ve reklam kimliği <b>yoktur</b>; konum, telefon numarası ve fotoğraf
-istenmez. Topladığımız tek şey hizmetin çalışması için gereken bilgidir: kim olduğunuz,
-hangi gruptasınız, hangi ders yapıldı ve hangi ödev verildi.</p>
+verinin sunucuda tutulmasını gerektirir. Buna karşılık uygulamada reklam, reklam
+kimliği ve kullanım alışkanlığınızı ölçen analitik <b>yoktur</b>; konum, telefon
+numarası ve fotoğraf istenmez. Topladığımız şey hizmetin çalışması için gereken
+bilgidir: kim olduğunuz, hangi gruptasınız, hangi ders yapıldı ve hangi ödev verildi.
+Buna ek olarak, uygulama çöktüğünde sorunu bulabilmek için <b>hata kaydı</b>
+toplanır; ayrıntısı aşağıda.</p>
 
 <h2>Veri sorumlusu</h2>
 <p>Uygulama bağımsız bir geliştirici tarafından yayımlanmaktadır:
@@ -51,13 +53,20 @@ hangi gruptasınız, hangi ders yapıldı ve hangi ödev verildi.</p>
   <li><b>Cihaz bildirim jetonu</b> — bildirimin doğru telefona ulaşması için Google'ın
   ürettiği kimlik. Kişisel bilgi içermez ve yalnızca bildirim göndermek için
   kullanılır.</li>
+  <li><b>Hata kaydı</b> — uygulama çöktüğünde ya da bir işlem başarısız olduğunda
+  cihaz modeli, işletim sistemi ve uygulama sürümü, hatanın teknik metni ve hesap
+  kimliğiniz Firebase Crashlytics servisine gönderilir. Adınız, e-postanız ve
+  girdiğiniz içerik (öğrenci adı, ders, ödev) gönderilmez. Yalnızca yayınlanmış
+  sürümde çalışır ve amacı tek şeydir: hatayı bulup düzeltmek.</li>
 </ul>
 
 <h2>Toplamadığımız bilgiler</h2>
 <ul class="plain">
   <li>Konum — hiçbir hassasiyette istenmez.</li>
   <li>Reklam kimliği — uygulamada reklam yoktur.</li>
-  <li>Analitik ve çökme raporu — kullanım ölçen hiçbir araç kurulu değildir.</li>
+  <li>Analitik — hangi ekranı ne kadar kullandığınızı ölçen bir araç kurulu değildir.
+  Kurulu olan tek izleme aracı hata kaydıdır (yukarıda); yalnızca bir şey ters
+  gittiğinde devreye girer, normal kullanımda hiçbir şey göndermez.</li>
   <li>Telefon numarası, profil fotoğrafı, doğum tarihi.</li>
   <li>Ödeme bilgisi — ücretli bir özellik yoktur.</li>
   <li>Rehber, fotoğraf galerisi, mikrofon ya da kamera erişimi.</li>
@@ -80,10 +89,11 @@ değil, veritabanının kendisine yazılmıştır.</p>
 
 <h2>Hizmet sağlayıcı</h2>
 <p>Uygulama <b>Google Firebase</b> altyapısını kullanır: Authentication (hesap),
-Cloud Firestore (veritabanı), Cloud Functions (sunucu işlemleri) ve Cloud Messaging
-(bildirim). Google bu hizmetlerde veri işleyen sıfatıyla hareket eder.</p>
-<p>Bunun dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı, analitik sağlayıcı
-ya da veri simsarı yoktur. Veriler satılmaz.</p>
+Cloud Firestore (veritabanı), Cloud Functions (sunucu işlemleri), Cloud Messaging
+(bildirim) ve Crashlytics (hata kaydı). Google bu hizmetlerde veri işleyen sıfatıyla
+hareket eder.</p>
+<p>Bunun dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı ya da veri simsarı
+yoktur. Veriler satılmaz.</p>
 
 <h2>Verilerin tutulduğu yer</h2>
 <p>Veritabanı Google'ın <b>Avrupa çok bölgeli (eur3)</b> konumunda çalışır; kayıtlar
@@ -106,14 +116,16 @@ kapsamda temizlenir.</p>
 <p>Silme işlemi uygulamanın içinden yapılır: <b>Profil → Hesabı Sil</b>. Bize yazmanıza
 gerek yoktur. Adımlar <a href="../hesap-silme/">hesap silme sayfasında</a> anlatılıyor.</p>
 <p><b>Silinenler:</b> giriş hesabınız ve e-posta adresiniz, profiliniz (ad, soyad,
-branş, rol), bildirim jetonlarınız; öğretmenseniz oluşturduğunuz gruplar ile davet
-kodları; katılım kayıtlarınız; yalnızca size bağlı olan öğrenci kayıtları.</p>
+branş, rol), bildirim jetonlarınız ve bildirim geçmişiniz; öğretmenseniz
+oluşturduğunuz gruplar ile davet kodları, verdiğiniz dersler ve ödevler — bunlara
+bağlı yoklama ve teslim kayıtlarıyla birlikte; katılım kayıtlarınız; yalnızca size
+bağlı olan öğrenci kayıtları.</p>
 <p><b>Silinmeyenler:</b> paylaşılan veri, karşı tarafın kaydını da götürmemek için
 korunur. Bir öğrencinin başka bir velisi daha varsa öğrenci kaydı silinmez, yalnızca
-siz listeden çıkarılırsınız. Ayrıca <b>ders, ödev ve bildirim kayıtları şu an
-silinmemektedir</b>; hesabınız kapandıktan sonra da veritabanında kalırlar. Bu
-kayıtların da silinmesini istiyorsanız yukarıdaki adresten talep edin, elle
-temizleyelim.</p>
+siz listeden çıkarılırsınız. Aynı şekilde veli olarak hesabınızı silerseniz
+katıldığınız gruplardaki ders ve ödev kayıtları öğretmene ait olduğu için durur;
+yalnızca sizin erişiminiz kesilir. Artık kaydı kalmayan öğrencinize ait yoklama ve
+teslim satırları ise temizlenir.</p>
 
 <h2>Haklarınız</h2>
 <p>KVKK'nın 11. maddesi ve GDPR kapsamında; işlenen verileriniz hakkında bilgi
