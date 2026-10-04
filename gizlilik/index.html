@@ -58,6 +58,11 @@ toplanır; ayrıntısı aşağıda.</p>
   kimliğiniz Firebase Crashlytics servisine gönderilir. Adınız, e-postanız ve
   girdiğiniz içerik (öğrenci adı, ders, ödev) gönderilmez. Yalnızca yayınlanmış
   sürümde çalışır ve amacı tek şeydir: hatayı bulup düzeltmek.</li>
+  <li><b>Abonelik bilgisi (yalnızca öğretmenler)</b> — Premium aboneliğini yönetmek
+  için hesap kimliğiniz, satın aldığınız abonelik, bitiş tarihi ve mağazanın işlem
+  bilgisi abonelik hizmeti RevenueCat'e gider. Ödemeyi Apple ya da Google alır; kart
+  ve ödeme bilgileriniz bize ve RevenueCat'e ulaşmaz. Veliler için abonelik verisi
+  tutulmaz.</li>
 </ul>
 
 <h2>Toplamadığımız bilgiler</h2>
@@ -68,7 +73,7 @@ toplanır; ayrıntısı aşağıda.</p>
   Kurulu olan tek izleme aracı hata kaydıdır (yukarıda); yalnızca bir şey ters
   gittiğinde devreye girer, normal kullanımda hiçbir şey göndermez.</li>
   <li>Telefon numarası, profil fotoğrafı, doğum tarihi.</li>
-  <li>Ödeme bilgisi — ücretli bir özellik yoktur.</li>
+  <li>Kart ya da ödeme bilgisi — ödemeyi Apple ya da Google alır.</li>
   <li>Rehber, fotoğraf galerisi, mikrofon ya da kamera erişimi.</li>
 </ul>
 
@@ -92,7 +97,10 @@ değil, veritabanının kendisine yazılmıştır.</p>
 Cloud Firestore (veritabanı), Cloud Functions (sunucu işlemleri), Cloud Messaging
 (bildirim) ve Crashlytics (hata kaydı). Google bu hizmetlerde veri işleyen sıfatıyla
 hareket eder.</p>
-<p>Bunun dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı ya da veri simsarı
+<p>Öğretmenlerin Premium aboneliği <b>RevenueCat</b> (RevenueCat, Inc., ABD) üzerinden
+yönetilir; RevenueCat yalnızca yukarıda sayılan abonelik bilgisini, veri işleyen
+sıfatıyla işler.</p>
+<p>Bunların dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı ya da veri simsarı
 yoktur. Veriler satılmaz.</p>
 
 <h2>Verilerin tutulduğu yer</h2>
@@ -118,8 +126,10 @@ gerek yoktur. Adımlar <a href="../hesap-silme/">hesap silme sayfasında</a> anl
 <p><b>Silinenler:</b> giriş hesabınız ve e-posta adresiniz, profiliniz (ad, soyad,
 branş, rol), bildirim jetonlarınız ve bildirim geçmişiniz; öğretmenseniz
 oluşturduğunuz gruplar ile davet kodları, verdiğiniz dersler ve ödevler — bunlara
-bağlı yoklama ve teslim kayıtlarıyla birlikte; katılım kayıtlarınız; yalnızca size
-bağlı olan öğrenci kayıtları.</p>
+bağlı yoklama ve teslim kayıtlarıyla birlikte, ve RevenueCat'teki abonelik kaydınız;
+katılım kayıtlarınız; yalnızca size bağlı olan öğrenci kayıtları.</p>
+<p>Hesabı silmek mağaza aboneliğini <b>iptal etmez</b>. Ücretlendirilmeye devam
+edilmemesi için aboneliği Apple ya da Google hesabınızdan ayrıca iptal edin.</p>
 <p><b>Silinmeyenler:</b> paylaşılan veri, karşı tarafın kaydını da götürmemek için
 korunur. Bir öğrencinin başka bir velisi daha varsa öğrenci kaydı silinmez, yalnızca
 siz listeden çıkarılırsınız. Aynı şekilde veli olarak hesabınızı silerseniz
