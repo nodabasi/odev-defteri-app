@@ -17,14 +17,14 @@
   <p class="tagline">Ne topluyoruz, nerede duruyor, nasıl silinir</p>
 </header>
 
-<p class="meta">Yürürlük: 14 Ekim 2026 · iOS ve Android için Ödev Defteri mobil
-uygulaması</p>
+<p class="meta">Yürürlük: 14 Ekim 2026 · Son güncelleme: 6 Kasım 2026 · iOS ve
+Android için Ödev Defteri mobil uygulaması</p>
 
 <h2>Kısa özet</h2>
 <p>Ödev Defteri bir öğretmenle bir veliyi aynı kayda bağlar, bu yüzden hesap açmayı ve
 verinin sunucuda tutulmasını gerektirir. Buna karşılık uygulamada reklam, reklam
 kimliği ve kullanım alışkanlığınızı ölçen analitik <b>yoktur</b>; konum, telefon
-numarası ve fotoğraf istenmez. Topladığımız şey hizmetin çalışması için gereken
+numarası istenmez, fotoğraf galerinize erişilmez. Topladığımız şey hizmetin çalışması için gereken
 bilgidir: kim olduğunuz, hangi gruptasınız, hangi ders yapıldı ve hangi ödev verildi.
 Buna ek olarak, uygulama çöktüğünde sorunu bulabilmek için <b>hata kaydı</b>
 toplanır; ayrıntısı aşağıda.</p>
@@ -49,6 +49,11 @@ toplanır; ayrıntısı aşağıda.</p>
   raporu.</li>
   <li><b>Ödevler</b> — başlık, açıklama, son teslim tarihi ve her öğrenci için teslim
   durumu.</li>
+  <li><b>Ödev dosyaları</b> — öğretmenin bir ödeve kendi seçerek eklediği PDF, Word
+  belgesi ya da fotoğraf; dosyanın adı, boyutu ve türü. Fotoğraflar yüklenmeden önce
+  telefonda küçültülür. Dosyayı yalnızca o ödevi görebilen kişiler (öğretmen ve o
+  gruptaki öğrencilerin velileri) açabilir; açma bağlantısı birkaç dakika sonra
+  geçersiz olur.</li>
   <li><b>Bildirim geçmişi</b> — size gönderilen bildirimler ve okunup okunmadıkları.</li>
   <li><b>Cihaz bildirim jetonu</b> — bildirimin doğru telefona ulaşması için Google'ın
   ürettiği kimlik. Kişisel bilgi içermez ve yalnızca bildirim göndermek için
@@ -74,7 +79,10 @@ toplanır; ayrıntısı aşağıda.</p>
   gittiğinde devreye girer, normal kullanımda hiçbir şey göndermez.</li>
   <li>Telefon numarası, profil fotoğrafı, doğum tarihi.</li>
   <li>Kart ya da ödeme bilgisi — ödemeyi Apple ya da Google alır.</li>
-  <li>Rehber, fotoğraf galerisi, mikrofon ya da kamera erişimi.</li>
+  <li>Rehber, mikrofon ya da kamera erişimi.</li>
+  <li>Fotoğraf galerinize erişim — uygulama galerinizi okumaz. Öğretmen bir ödeve
+  fotoğraf eklerken telefonun kendi seçicisi açılır ve uygulamaya yalnızca seçilen
+  fotoğraf verilir.</li>
 </ul>
 
 <h2>Kim neyi görebilir</h2>
@@ -100,13 +108,17 @@ hareket eder.</p>
 <p>Öğretmenlerin Premium aboneliği <b>RevenueCat</b> (RevenueCat, Inc., ABD) üzerinden
 yönetilir; RevenueCat yalnızca yukarıda sayılan abonelik bilgisini, veri işleyen
 sıfatıyla işler.</p>
+<p>Ödev dosyaları <b>Cloudflare R2</b> (Cloudflare, Inc., ABD) depolama hizmetinde
+tutulur; Cloudflare dosyaları veri işleyen sıfatıyla saklar ve yalnızca sunucumuzun
+verdiği kısa süreli bağlantılarla erişilebilir hale getirir.</p>
 <p>Bunların dışında hiçbir üçüncü tarafa veri aktarılmaz. Reklam ağı ya da veri simsarı
 yoktur. Veriler satılmaz.</p>
 
 <h2>Verilerin tutulduğu yer</h2>
 <p>Veritabanı Google'ın <b>Avrupa çok bölgeli (eur3)</b> konumunda çalışır; kayıtlar
 Belçika ve Hollanda'daki veri merkezlerinde tutulur. Sunucu işlemleri Belçika
-(europe-west1) bölgesinde yürütülür.</p>
+(europe-west1) bölgesinde yürütülür. Ödev dosyaları Cloudflare'in <b>Avrupa Birliği
+(EU)</b> veri bölgesinde tutulur.</p>
 
 <h2>Öğrencilere ait bilgiler</h2>
 <p>Uygulamada öğrenci adına hesap açılmaz. Öğrenci kaydı yalnızca <b>ad ve soyaddan</b>
@@ -118,7 +130,8 @@ adresten bize yazın; kaydı siler ve size dönüş yaparız.</p>
 
 <h2>Saklama süresi</h2>
 <p>Kayıtlar hesabınız durduğu sürece saklanır. Hesabınızı sildiğinizde aşağıdaki
-kapsamda temizlenir.</p>
+kapsamda temizlenir. Bir ödev silindiğinde ona eklenen dosyalar da depolamadan
+otomatik olarak silinir.</p>
 
 <h2>Hesabınızı silmek</h2>
 <p>Silme işlemi uygulamanın içinden yapılır: <b>Profil → Hesabı Sil</b>. Bize yazmanıza
@@ -126,7 +139,7 @@ gerek yoktur. Adımlar <a href="../hesap-silme/">hesap silme sayfasında</a> anl
 <p><b>Silinenler:</b> giriş hesabınız ve e-posta adresiniz, profiliniz (ad, soyad,
 branş, rol), bildirim jetonlarınız ve bildirim geçmişiniz; öğretmenseniz
 oluşturduğunuz gruplar ile davet kodları, verdiğiniz dersler ve ödevler — bunlara
-bağlı yoklama ve teslim kayıtlarıyla birlikte, ve RevenueCat'teki abonelik kaydınız;
+bağlı yoklama, teslim kayıtları ve ödev dosyalarıyla birlikte, ve RevenueCat'teki abonelik kaydınız;
 katılım kayıtlarınız; yalnızca size bağlı olan öğrenci kayıtları.</p>
 <p>Hesabı silmek mağaza aboneliğini <b>iptal etmez</b>. Ücretlendirilmeye devam
 edilmemesi için aboneliği Apple ya da Google hesabınızdan ayrıca iptal edin.</p>
